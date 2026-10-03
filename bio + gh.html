@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Βιογραφικό</title>
+    <style>
+        /* Ρυθμίσεις Φόντου Browser */
+        body {
+            font-family: 'Georgia', sans-serif;
+            margin: 0;
+            padding: 0px 0;
+            display: flex;
+            justify-content: center; /* Κεντράρει το Α4 */
+        }
+
+        /* Το "Κουτί" της Α4 */
+        .page-wrapper {
+            width: 210mm; /* Πλάτος Α4 */
+            min-height: 297mm; /* Ύψος Α4 */
+            display: flex; /* Sidebar & Content δίπλα-δίπλα */
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            overflow: hidden;
+            box-sizing: border-box;
+        /*background-image: url('υπολογιστής-δουλειά.jpg');
+        background-color: rgba(255, 255, 255, 0.9);*/
+        background-color: #F5F5F5;
+        background-blend-mode: overlay;
+        background-size: cover; 
+        background-repeat: no-repeat;
+        background-position: center; /* Για να κεντραριστεί η φωτό στο Α4 */
+        }
+
+        .sidebar {
+            width: 200px; /* Σταθερό πλάτος για να μην ξεχειλώνει */
+            background-color: rgba(244, 244, 244, 0.6);
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            word-wrap: break-word;
+            flex-shrink: 0; /* Να μην μικραίνει */
+            margin-top: -15px;
+        }
+
+        .sidebar p {
+            font-size: 17px;
+        }
+
+        .content {
+            flex: 1; /* Παίρνει το υπόλοιπο πλάτος του Α4 */
+            padding: 10px 10px 0px 10px;
+            box-sizing: border-box;
+        }
+
+        /* Sections */
+        .section {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            padding: 1rem;
+            color: #272526;
+            paddin-top: 0px;
+        }
+
+        /* Εικόνα */
+        img {
+            display: block;
+            margin: 0 auto;
+            margin-top: 10px;
+            width: 170px;
+            height: 170px;
+            border: 2px solid black;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: 40% 40%;
+        }
+
+        /* Γλώσσες */
+        .language-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .language-row p { margin: 0; }
+        .stars { font-size: 18px; }
+
+        /* Λίστα Δεξιοτήτων (Κυρίως Περιεχόμενο) */
+        .skills-list {
+            list-style-type: none;
+            padding-left: 25px;
+        }
+        .skills-list li {
+            display: flex;
+            align-items: center; /* Στοίχιση στο κέντρο για τις απλές δεξιότητες */
+            margin-bottom: 8px;
+        }
+
+        /* Λίστα Χαρακτηριστικών (Sidebar) */
+        .skills-list1 {
+            list-style-type: none;
+            padding: 0;
+        }
+        .skills-list1 li {
+            display: flex;
+            align-items: flex-start; /* Στοίχιση στην κορυφή για τις μεγάλες προτάσεις */
+            margin-bottom: 20px;
+            font-size: 17px; /* Εφαρμόζει επιτέλους τα 14px εδώ */
+        }
+
+        .tick {
+        margin-right: 10px; /* Κενό ανάμεσα στο βέλος και τη λέξη */
+        /* Βεβαιώσου ότι ΔΕΝ υπάρχει αρνητικό margin-left εδώ */
+        }
+
+        .custom-bullets ul {
+        list-style-type: square;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column; /* Τα σεμινάρια και πρακτική το ένα κάτω από το άλλο για να χωράνε */
+            gap: 10px;
+        }
+
+        /* Ρυθμίσεις Εκτύπωσης */
+        @media print {
+            body { background: none; padding: 0; }
+            .page-wrapper { box-shadow: none; width: 210mm; height: 297mm; }
+            @page { size: A4 portrait; margin: 0; }
+        }
+
+        /* Για κινητά */
+        @media (max-width: 600px) {
+            .page-wrapper { width: 95%; flex-direction: column; height: auto; }
+            .sidebar { width: 100%; }
+        }
+        @media print {
+    body, .sidebar {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }   
+}
+
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <br>
+        <img src="IMG_20260420_024213.jpg" alt="description">
+        <br>
+        <h3 style="font-size: 19px;">Προσωπικά Στοιχεία</h3>
+        <p><strong>Όνομα:</strong> Άννα</p>
+        <p><strong>Επώνυμο:</strong> Αλεξάκη</p>
+        <p><strong>Ημερομηνία Γέννησης:</strong> <br>15-07-2004</p>
+        <p><strong>Τόπος Διαμονής:</strong> Θεσσαλονίκη</p>
+        <p><strong>Email:</strong> <br>anna.413x4@gmail.com</p>
+        <p><strong>Τηλέφωνο:</strong> <br>6907591159</p>
+        <br>
+        <br>
+        <h3 style="font-size: 19px;">Γλώσσες</h3>
+        <div class="language-row">
+            <p>Ελληνικά</p>
+            <span class="stars">★★★★★</span>
+        </div>
+        <div class="language-row">
+            <p>Αγγλικά (Β2)</p>
+            <span class="stars">★★★☆☆</span>
+        </div>
+        <br>
+        <br>
+        <h3 style="font-size: 19px;">Χαρακτηριστικά</h3>
+        <ul class="skills-list1">
+            <li><span class="tick"><b>✔</b></span>Διαχείριση χρόνου και οργάνωση</li>
+            <li><span class="tick"><b>✔</b></span>Ομαδικό πνεύμα και ικανότητα συνεργασίας.</li>
+            <li><span class="tick"><b>✔</b></span>Ευμάθεια και δυνατότητα προσαρμογής σε νέες τεχνολογίες.</li>
+        </ul>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+        <div class="section">
+            <h1 style="margin-top: 0;">ΑΝΝΑ ΑΛΕΞΑΚΗ</h1>
+            <h2>Προφίλ</h2>
+            <p>Ονομάζομαι Άννα Αλεξάκη και είμαι απόφοιτη του τμήματος Τεχνικού Εφαρμογών Πληροφορικής (Πολυμέσα/Web Design-Develop/Video Games) της σχολής ανώτερης επαγγελματικής κατάρτισης ΑΚΜΗ Θεσσαλονίκης. Αναζητώ επαγγελματική ευκαιρία στον τομέα της γραμματειακής υποστήριξης. Με χαρακτηρίζουν η υπευθυνότητα και η προσαρμοστικότητα, και επιθυμώ να εργαστώ σε ένα περιβάλλον που επενδύει σε νέους ανθρώπους με όρεξη για προσφορά.</p>
+        </div>
+
+        <div class="section">
+            <h2 style="margin-top: 0;">Πρακτική Άσκηση</h2>
+        <p><strong>Customer service intern ~ Cosmote (Telekom)</strong>, Κατάστημα Παπάφη (Θεσσαλονίκη) </p>
+        <p><em> Ιανουάριος 2025 - Ιούνιος 2025 </em></p>
+        <div class="custom-bullets">
+         <ul>
+          <li>Υποδοχή, εξυπηρέτηση πελατών και παροχή πληροφοριών για προϊόντα τεχνολογίας και υπηρεσίες της Cosmote.</li>
+          <!--<li>Εξοικείωση με διαδικασίες πωλήσεων, τιμολόγησης και διαχείρισης παραγγελιών.</li><br>-->
+          <li>Ανάπτυξη επικοινωνιακών δεξιοτήτων και εμπειρία σε πραγματικό επαγγελματικό περιβάλλον.</li>
+        </ul>
+        </div>
+</div>
+        <div class="section">
+            <h2 style="margin-top: 0;">Εργασιακή εμπειρία</h2>
+        <p><strong> Passenger service agent ~ Goldair Handling</strong>, Διεθνής Αερολιμένας «Μακεδονία» (Θεσσαλονίκη) </p>
+        <p><em> Ιούνιος 2026 - Σεπτέμβριος 2026 </em></p>
+        <div class="custom-bullets">
+         <ul>Διεκπεραίωση διαδικασιών check-in και επιβίβασης για την Aegean Airlines, καθώς και ένα ευρύ φάσμα αεροπορικών εταιριών με τήρηση της πολιτικής της κάθε μίας και των παγκόσμιων προτύπων ασφαλείας. Εξυπηρέτηση διαφόρων κατηγοριών επιβατών σε εξειδικευμένα γκισέ, διαχείριση απαιτητικών καταστάσεων και συνοδεία ειδικών κατηγοριών ταξιδιωτών.</ul>
+        </div>
+</div>
+        <div class="containe">
+            <div class="section">
+                <h2 style="margin-top: 0;">Σεμινάρια</h2>
+                
+                <h3>ECDL Advanced</h3>
+                <ul>MS Office (Word | Excel | Powerpoint | Access | Outlook)</ul>
+                <h3>Certified Secretary</h3>
+                <ul>Οργάνωση Γραφείου</ul>
+                
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
